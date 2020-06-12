@@ -5,7 +5,7 @@ import useKorapay from "lib/useKorapay";
 
 function App() {
   const [initialKora] = useKorapay({
-    key: "",
+    key: "pk_test_e97f2034f2b37610ff2a2422f73c38f10c47dfa0",
     amount: 10,
     customer: {
       name: "Somto",
@@ -29,23 +29,23 @@ function App() {
         >
           Learn React
         </a>
-      </header>
 
-      <section>
-        <h1>Testing Korapay react-wrapper</h1>
-        <div>
-          <button
-            onClick={() => {
-              initialKora({
-                onClose: () => null,
-                onSuccess: (res: any) => console.log(res)
-              });
-            }}
-          >
-            Test payment now!
-          </button>
-        </div>
-      </section>
+        <section>
+          <h1>Testing Korapay react-wrapper</h1>
+          <div>
+            <button
+              onClick={() => {
+                initialKora({
+                  onClose: () => null,
+                  onSuccess: (res: any) => console.log(res)
+                });
+              }}
+            >
+              Test payment now!
+            </button>
+          </div>
+        </section>
+      </header>
     </div>
   );
 }
