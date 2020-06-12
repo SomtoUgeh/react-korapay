@@ -9,10 +9,10 @@ interface ScriptStatusInterface {
   error: boolean;
 }
 
-export default function usePaystackScript() {
-  const src =
-    "https://korablobstorage.blob.core.windows.net/modal-bucket/korapay-collections.min.js";
+const src =
+  "https://korablobstorage.blob.core.windows.net/modal-bucket/korapay-collections.min.js";
 
+export default function usePaystackScript() {
   const [state, setState] = React.useState<ScriptStatusInterface>({
     loaded: false,
     error: false
@@ -58,7 +58,7 @@ export default function usePaystackScript() {
         script.removeEventListener("error", onScriptError);
       };
     }
-  }, [src]);
+  }, []);
 
   return [state.loaded, state.error] as const;
 }
