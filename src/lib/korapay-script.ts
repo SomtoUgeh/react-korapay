@@ -12,7 +12,7 @@ interface ScriptStatusInterface {
 const src =
   "https://korablobstorage.blob.core.windows.net/modal-bucket/korapay-collections.min.js";
 
-export default function usePaystackScript() {
+export default function useKorapayScript() {
   const [state, setState] = React.useState<ScriptStatusInterface>({
     loaded: false,
     error: false

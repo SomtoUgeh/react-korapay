@@ -31,31 +31,38 @@ export interface KoraPayProps {
   /**
    * Information/narration about the transaction
    */
-  narration: string;
+  narration?: string;
   /**
    * function to be called when the payment gateway is closed
    */
-  onClose: () => void;
+  onClose: Function;
   /**
    * function to be called when the payment is completed successfully
    */
-  onSuccess: () => void;
+  onSuccess: Function;
   /**
    * function to be called when the payment failed
    */
-  onFailed?: () => void;
+  onFailed?: Function;
   /**
    * function to be called when card tokenization is completed successfully
    */
-  onTokenized: () => void;
+  onTokenized?: Function;
   /**
    * HTTP endpoint to send information to on payment termination, success, or failure.
    * This overrides the webhook URL set on your merchant dashboard for this particular transaction
    */
-  notification_url: string;
+  notification_url?: string;
   /**
    * Methods of payment eg. Bank (bank_transfer), card(card). Default is [“bank_transfer”, “card”]
    * {@default} [“bank_transfer”, “card”]
    */
   channels: string[];
+}
+
+export interface InitializeKorapayPayment {
+  onClose?: KoraPayProps["onClose"];
+  onFailed?: KoraPayProps["onFailed"];
+  onSuccess: KoraPayProps["onSuccess"];
+  onTokenized?: KoraPayProps["onTokenized"];
 }
