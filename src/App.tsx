@@ -1,8 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import useKorapay from "lib/useKorapay";
 
 function App() {
+  const [initialKora] = useKorapay({
+    key: "",
+    amount: 10,
+    customer: {
+      name: "Somto",
+      email: "smugeh@gmail.com"
+    },
+    narration: "Testing korapay react-wrapper"
+  });
+
   return (
     <div className="App">
       <header className="App-header">
@@ -19,6 +30,22 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <section>
+        <h1>Testing Korapay react-wrapper</h1>
+        <div>
+          <button
+            onClick={() => {
+              initialKora({
+                onClose: () => null,
+                onSuccess: (res: any) => console.log(res)
+              });
+            }}
+          >
+            Test payment now!
+          </button>
+        </div>
+      </section>
     </div>
   );
 }

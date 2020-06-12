@@ -14,7 +14,7 @@ export interface KoraPayProps {
    * Currency of the charge.
    * {@default} NGN (Nigerian Naira)
    */
-  currency: Currency;
+  currency?: Currency;
   /**
    * Transaction reference.
    * -If you do not provide one, a unique transaction reference would be generated for the transaction.
@@ -57,11 +57,22 @@ export interface KoraPayProps {
    * Methods of payment eg. Bank (bank_transfer), card(card). Default is [“bank_transfer”, “card”]
    * {@default} [“bank_transfer”, “card”]
    */
-  channels: string[];
+  channels?: string[];
+}
+
+export interface KorapayConfig {
+  key: KoraPayProps["key"];
+  amount: KoraPayProps["amount"];
+  customer: KoraPayProps["customer"];
+  currency?: KoraPayProps["currency"];
+  reference?: KoraPayProps["reference"];
+  narration?: KoraPayProps["narration"];
+  notification_url?: KoraPayProps["notification_url"];
+  channels?: KoraPayProps["channels"];
 }
 
 export interface InitializeKorapayPayment {
-  onClose?: KoraPayProps["onClose"];
+  onClose: KoraPayProps["onClose"];
   onFailed?: KoraPayProps["onFailed"];
   onSuccess: KoraPayProps["onSuccess"];
   onTokenized?: KoraPayProps["onTokenized"];

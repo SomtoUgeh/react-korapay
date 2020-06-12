@@ -1,13 +1,13 @@
 import * as React from "react";
 import useKorapayScript from "./korapay-script";
-import { KoraPayProps, InitializeKorapayPayment } from "./types";
+import { KoraPayProps, KorapayConfig, InitializeKorapayPayment } from "./types";
 
 /**
  *
  * @param config takes in configuration for payment
- * @returns paymentInitialization Fn
+ * @returns handleKorapayPayment
  */
-export default function useKoraPay(config: KoraPayProps) {
+export default function useKorapay(korapayConfig: KorapayConfig) {
   const [loaded, error] = useKorapayScript();
 
   React.useEffect(() => {
@@ -21,8 +21,8 @@ export default function useKoraPay(config: KoraPayProps) {
    * @param object - {onSuccess, onClose, onFailed, onTokenized}
    */
   function handleKorapayPayment({
-    onSuccess = (): any => null,
-    onClose = (): any => null,
+    onSuccess,
+    onClose,
     onFailed,
     onTokenized
   }: InitializeKorapayPayment) {
@@ -32,11 +32,11 @@ export default function useKoraPay(config: KoraPayProps) {
 
     if (loaded) {
       const korapayArgs: KoraPayProps = {
-        ...config,
-        amount: config.amount ?? 0,
-        currency: config.currency ?? "NGN",
-        onSuccess: onSuccess,
-        onClose: onClose
+        ...korapayConfig,
+        amount: korapayConfig.amount ?? 0,
+        currency: korapayConfig.currency ?? "NGN",
+        onSuccess: onSuccess ? onSuccess : (): any => null,
+        onClose: onClose ? onClose : (): any => null
       };
 
       if (onFailed) korapayArgs.onFailed = onFailed;
