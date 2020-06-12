@@ -3,16 +3,18 @@ import logo from "./logo.svg";
 import "./App.css";
 import useKorapay from "lib/useKorapay";
 
+const korapayConfig = {
+  key: "pk_test_RVVQPRg55pykzVTYYfyas5ZGMDitK2QYhm6vtawT",
+  amount: 2000,
+  customer: {
+    name: "John Doe",
+    email: "somtougeman@gmail.com"
+  },
+  narration: "Testing korapay react-wrapper"
+};
+
 function App() {
-  const [initialKora] = useKorapay({
-    key: "pk_test_e97f2034f2b37610ff2a2422f73c38f10c47dfa0",
-    amount: 10,
-    customer: {
-      name: "Somto",
-      email: "smugeh@gmail.com"
-    },
-    narration: "Testing korapay react-wrapper"
-  });
+  const [initialKorapay] = useKorapay(korapayConfig);
 
   return (
     <div className="App">
@@ -35,9 +37,9 @@ function App() {
           <div>
             <button
               onClick={() => {
-                initialKora({
+                initialKorapay({
                   onClose: () => null,
-                  onSuccess: (res: any) => console.log(res)
+                  onSuccess: () => null
                 });
               }}
             >
