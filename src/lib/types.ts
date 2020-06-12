@@ -12,7 +12,7 @@ export interface KoraPayProps {
   amount: number;
   /**
    * Currency of the charge.
-   * - Default is NGN (Nigerian Naira)
+   * {@default} NGN (Nigerian Naira)
    */
   currency: Currency;
   /**
