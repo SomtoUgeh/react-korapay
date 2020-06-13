@@ -1,0 +1,42 @@
+{
+  "extends": [
+    "react-app",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "eslint-config-prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module"
+  },
+  "plugins": ["react-hooks", "@typescript-eslint", "prettier"],
+  "globals": {
+    "cy": "readonly",
+    "assert": "readonly",
+    "context": "readonly",
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "rules": {
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "no-undef": "off",
+    "no-empty": "warn",
+    "no-console": "error",
+    "no-func-assign": 1,
+    "no-unreachable": 1,
+    "no-invalid-regexp": 1,
+    "no-unused-vars": "off",
+    "jsx-a11y/href-no-hash": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/no-empty-function": "warn",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/explicit-function-return-type": "off"
+  }
+}
