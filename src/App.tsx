@@ -4,11 +4,11 @@ import "./App.css";
 import { useKorapay, KorapayButton } from "lib";
 
 const korapayConfig = {
-  public_key: "pk_test_RVVQPRg55pykzVTYYfyas5ZGMDitK2QYhm6vtawT",
+  public_key: "pk_test_**your_public_key**",
   amount: 2000,
   customer: {
     name: "John Doe",
-    email: "somtougeman@gmail.com"
+    email: "johnDoe@gmail.com"
   },
   narration: "Testing korapay react-wrapper"
 };
@@ -51,7 +51,9 @@ function App() {
               Test payment now!
             </button>
 
-            <KorapayButton {...korapayBtnConfig}>Pay now!</KorapayButton>
+            <KorapayButton {...korapayBtnConfig}>
+              Testing Korapay btn, Pay now!
+            </KorapayButton>
           </div>
         </section>
       </header>
