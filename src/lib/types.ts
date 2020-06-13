@@ -61,7 +61,7 @@ export interface KoraPayProps {
 }
 
 export interface KorapayConfig {
-  key: KoraPayProps["key"];
+  public_key: KoraPayProps["key"];
   amount: KoraPayProps["amount"];
   customer: KoraPayProps["customer"];
   currency?: KoraPayProps["currency"];

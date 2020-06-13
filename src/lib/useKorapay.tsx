@@ -33,6 +33,7 @@ export default function useKorapay(korapayConfig: KorapayConfig) {
     if (loaded) {
       const korapayArgs: KoraPayProps = {
         ...korapayConfig,
+        key: korapayConfig.public_key,
         amount: korapayConfig.amount ?? 0,
         currency: korapayConfig.currency ?? "NGN",
         onSuccess: onSuccess ? onSuccess : (): any => null,

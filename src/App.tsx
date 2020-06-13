@@ -1,10 +1,10 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import useKorapay from "lib/useKorapay";
+import { useKorapay, KorapayButton } from "lib";
 
 const korapayConfig = {
-  key: "pk_test_RVVQPRg55pykzVTYYfyas5ZGMDitK2QYhm6vtawT",
+  public_key: "pk_test_RVVQPRg55pykzVTYYfyas5ZGMDitK2QYhm6vtawT",
   amount: 2000,
   customer: {
     name: "John Doe",
@@ -14,6 +14,11 @@ const korapayConfig = {
 };
 
 function App() {
+  const korapayBtnConfig = {
+    ...korapayConfig,
+    onSuccess: () => null
+  };
+
   const [initialKorapay] = useKorapay(korapayConfig);
 
   return (
@@ -45,6 +50,8 @@ function App() {
             >
               Test payment now!
             </button>
+
+            <KorapayButton {...korapayBtnConfig}>Pay now!</KorapayButton>
           </div>
         </section>
       </header>
