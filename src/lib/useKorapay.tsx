@@ -40,6 +40,9 @@ export default function useKorapay(korapayConfig: KorapayConfig) {
         onClose: onClose ? onClose : (): any => null
       };
 
+      // @ts-ignore
+      delete korapayArgs.public_key;
+
       if (onFailed) korapayArgs.onFailed = onFailed;
       if (onTokenized) korapayArgs.onTokenized = onTokenized;
 
