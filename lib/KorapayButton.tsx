@@ -1,11 +1,11 @@
-import React, { ReactNode } from "react";
+import * as React from "react";
 import useKorapay from "./useKorapay";
 import { KorapayConfig } from "./types";
 
 interface KorapayButtonProps extends KorapayConfig {
   text?: string;
   className?: string;
-  children?: ReactNode;
+  children?: React.ReactNode;
   onSuccess?: Function;
   onClose?: Function;
   disabled?: boolean;

@@ -1,10 +1,10 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { useKorapay, KorapayButton } from "lib";
+import { useKorapay, KorapayButton } from "./dist/index.es";
 
 const korapayConfig = {
-  public_key: "pk_test_**your_public_key**",
+  public_key: "pk_test_**your_secret_key**",
   amount: 2000,
   customer: {
     name: "John Doe",
@@ -52,7 +52,7 @@ function App() {
             </button>
 
             <KorapayButton {...korapayBtnConfig}>
-              Testing Korapay btn, Pay now!
+              Make payment with korapay!
             </KorapayButton>
           </div>
         </section>
