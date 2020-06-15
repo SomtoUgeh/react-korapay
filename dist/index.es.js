@@ -1,4 +1,4 @@
-import React__default, { useState, useEffect } from 'react';
+import { useState, useEffect, createElement } from 'react';
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
@@ -100,13 +100,13 @@ function useKorapay(korapayConfig) {
      * @param object - {onSuccess, onClose, onFailed, onTokenized}
      */
     function handleKorapayPayment(_a) {
-        var onSuccess = _a.onSuccess, onClose = _a.onClose, onFailed = _a.onFailed, onTokenized = _a.onTokenized;
         var _b, _c;
+        var onSuccess = _a.onSuccess, onClose = _a.onClose, onFailed = _a.onFailed, onTokenized = _a.onTokenized;
         if (error) {
             throw new Error("Unable to load korapay collection modal");
         }
         if (loaded) {
-            var korapayArgs = __assign(__assign({}, korapayConfig), { key: korapayConfig.public_key, amount: (_b = korapayConfig.amount, (_b !== null && _b !== void 0 ? _b : 0)), currency: (_c = korapayConfig.currency, (_c !== null && _c !== void 0 ? _c : "NGN")), onSuccess: onSuccess ? onSuccess : function () { return null; }, onClose: onClose ? onClose : function () { return null; } });
+            var korapayArgs = __assign(__assign({}, korapayConfig), { key: korapayConfig.public_key, amount: (_b = korapayConfig.amount) !== null && _b !== void 0 ? _b : 0, currency: (_c = korapayConfig.currency) !== null && _c !== void 0 ? _c : "NGN", onSuccess: onSuccess ? onSuccess : function () { return null; }, onClose: onClose ? onClose : function () { return null; } });
             // @ts-ignore
             delete korapayArgs.public_key;
             if (onFailed)
@@ -123,8 +123,7 @@ function useKorapay(korapayConfig) {
 var KorapayButton = function (_a) {
     var text = _a.text, className = _a.className, children = _a.children, _b = _a.onSuccess, onSuccess = _b === void 0 ? function () { return null; } : _b, _c = _a.onClose, onClose = _c === void 0 ? function () { return null; } : _c, disabled = _a.disabled, config = __rest(_a, ["text", "className", "children", "onSuccess", "onClose", "disabled"]);
     var initializePayment = useKorapay(config)[0];
-    return (React__default.createElement("button", { disabled: disabled, className: className, onClick: function () { return initializePayment({ onSuccess: onSuccess, onClose: onClose }); } }, text || children));
+    return (createElement("button", { disabled: disabled, className: className, onClick: function () { return initializePayment({ onSuccess: onSuccess, onClose: onClose }); } }, text || children));
 };
 
 export { KorapayButton, useKorapay };
-//# sourceMappingURL=index.es.js.map
