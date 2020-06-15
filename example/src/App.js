@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { useKorapay, KorapayButton } from "./dist/index.es";
+import { useKorapay, KorapayButton } from "react-korapay";
 
 const korapayConfig = {
   public_key: "pk_test_**your_secret_key**",
