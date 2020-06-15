@@ -4,7 +4,7 @@ import "./App.css";
 import { useKorapay, KorapayButton } from "./dist/index.es";
 
 const korapayConfig = {
-  public_key: "pk_test_RVVQPRg55pykzVTYYfyas5ZGMDitK2QYhm6vtawT",
+  public_key: "pk_test_**your_secret_key**",
   amount: 2000,
   customer: {
     name: "John Doe",
