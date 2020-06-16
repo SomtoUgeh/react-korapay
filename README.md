@@ -1,10 +1,10 @@
-### React-Korapay
+# React-Korapay
 
 ![Demo](https://github.com/SomtoUgeh/react-korapay/raw/master/media/demo.png)
 
 > This is a react package for implementing korapay collection gateway
 
-### Installation
+## Installation
 
 ```bash
 $ npm i --save react-korapay
@@ -12,7 +12,7 @@ $ npm i --save react-korapay
 $ yarn add react-korapay
 ```
 
-### Examples
+## Examples
 
 - Basic -
   [CodeSandbox](https://codesandbox.io/s/react-korapay-example-o6h3j?file=/src/App.js:0-26)
@@ -69,12 +69,12 @@ Please checkout
 [Korapay Documentation](https://korahq.atlassian.net/wiki/spaces/AR/pages/1064370549/Collection+Modal)
 for other available options you can add to the tag
 
-### License
+## License
 
 This project is licensed under the MIT License - see the
 [LICENSE.md](LICENSE) file for details
 
-### Contributions ✨
+## Contributions ✨
 
 > Special thanks to Ayeni Olusegun, your work on [react-paystack](https://github.com/iamraphson/react-paystack) helped alot!
 
