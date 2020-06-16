@@ -72,9 +72,11 @@ for other available options you can add to the tag
 ### License
 
 This project is licensed under the MIT License - see the
-[LICENSE.md](LICENSE.md) file for details
+[LICENSE.md](LICENSE) file for details
 
 ### Contributions ✨
+
+> Special thanks to Ayeni Olusegun, your work on [react-paystack](https://github.com/iamraphson/react-paystack) helped alot!
 
 1. Fork it!
 2. Create your feature branch: `git checkout -b feature-name`
