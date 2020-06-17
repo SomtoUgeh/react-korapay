@@ -5,7 +5,7 @@ import { KoraPayProps, KorapayConfig, InitializeKorapayPayment } from "./types";
 /**
  *
  * @param config takes in configuration for payment
- * @returns handleKorapayPayment
+ * @returns [handleKorapayPayment] fn
  */
 export default function useKorapay(korapayConfig: KorapayConfig) {
   const [loaded, error] = useKorapayScript();
@@ -25,7 +25,7 @@ export default function useKorapay(korapayConfig: KorapayConfig) {
     onClose,
     onFailed,
     onTokenized
-  }: InitializeKorapayPayment) {
+  }: InitializeKorapayPayment): void {
     if (error) {
       throw new Error("Unable to load korapay collection modal");
     }

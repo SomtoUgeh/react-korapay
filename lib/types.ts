@@ -12,12 +12,12 @@ export interface KoraPayProps {
   amount: number;
   /**
    * Currency of the charge.
-   * {@default} NGN (Nigerian Naira)
+   * @default NGN - (Nigerian Naira)
    */
   currency?: Currency;
   /**
    * Transaction reference.
-   * -If you do not provide one, a unique transaction reference would be generated for the transaction.
+   * - If you do not provide one, a unique transaction reference would be generated for the transaction.
    */
   reference?: string;
   /**
@@ -54,8 +54,8 @@ export interface KoraPayProps {
    */
   notification_url?: string;
   /**
-   * Methods of payment eg. Bank (bank_transfer), card(card). Default is [“bank_transfer”, “card”]
-   * {@default} [“bank_transfer”, “card”]
+   * Methods of payment eg. Bank (bank_transfer), card(card)
+   * @default [“bank_transfer”, “card”]
    */
   channels?: string[];
 }
