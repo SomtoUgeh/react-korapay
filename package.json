@@ -1,6 +1,6 @@
 {
   "name": "react-korapay",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "This is a react package for implementing korapay collection gateway",
   "repository": {
     "type": "git",
@@ -18,6 +18,9 @@
   ],
   "author": "Somto M.Ugeh <smugeh@gmail.com>",
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "bugs": {
     "url": "https://github.com/SomtoUgeh/react-korapay/issues"
   },
