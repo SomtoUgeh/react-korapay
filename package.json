@@ -1,10 +1,9 @@
 {
   "name": "@somtougeh/react-korapay",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "This is a react package for implementing korapay collection gateway",
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SomtoUgeh/react-korapay.git"
+    "url": "git://github.com/SomtoUgeh/react-korapay.git"
   },
   "keywords": [
     "javaScript",
