@@ -7,9 +7,9 @@
 ## Installation
 
 ```bash
-$ npm i --save react-korapay
+$ npm install @somtougeh/react-korapay@1.0.0
 # or
-$ yarn add react-korapay
+$ yarn add @somtougeh/react-korapay@1.0.0
 ```
 
 ## Examples
@@ -71,12 +71,13 @@ for other available options you can add to the tag
 
 ## License
 
-This project is licensed under the MIT License - see the
-[LICENSE.md](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE)
+file for details
 
 ## Contributions ✨
 
-> Special thanks to Ayeni Olusegun, your work on [react-paystack](https://github.com/iamraphson/react-paystack) helped alot!
+> Special thanks to Ayeni Olusegun, your work on
+> [react-paystack](https://github.com/iamraphson/react-paystack) helped alot!
 
 1. Fork it!
 2. Create your feature branch: `git checkout -b feature-name`
