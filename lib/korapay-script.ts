@@ -18,7 +18,7 @@ export default function useKorapayScript() {
     error: false
   });
 
-  React.useEffect((): any => {
+  React.useEffect((): (() => void) | void => {
     if (loadedScripts.hasOwnProperty(src)) {
       setState({
         loaded: true,
@@ -27,6 +27,7 @@ export default function useKorapayScript() {
     } else {
       loadedScripts.src = src;
 
+      // eslint-disable-next-line no-undef
       const script = document.createElement("script");
       script.src = src;
       script.async = true;
@@ -51,6 +52,7 @@ export default function useKorapayScript() {
       script.addEventListener("complete", onScriptLoad);
       script.addEventListener("error", onScriptError);
 
+      // eslint-disable-next-line no-undef
       document.body.appendChild(script);
 
       return () => {

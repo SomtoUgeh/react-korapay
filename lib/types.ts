@@ -26,7 +26,7 @@ export interface KoraPayProps {
   customer: {
     name: string;
     email: string;
-    [key: string]: any;
+    [key: string]: unknown;
   };
   /**
    * Information/narration about the transaction

@@ -39,7 +39,7 @@ export default function App() {
     text: "Pay with korapay!"
   };
 
-  const [handleKorapay] = useKorapay(config);
+  const handleKorapay = useKorapay(config);
 
   return (
     <div className="App">

@@ -5,20 +5,18 @@ import { KoraPayProps, KorapayConfig, InitializeKorapayPayment } from "./types";
 /**
  *
  * @param config takes in configuration for payment
- * @returns [handleKorapayPayment] fn
+ * @returns handleKorapayPayment fn
  */
 export default function useKorapay(korapayConfig: KorapayConfig) {
   const [loaded, error] = useKorapayScript();
 
   React.useEffect(() => {
-    if (error) {
-      throw new Error("Unable to load korapay collection modal");
-    }
+    if (error) throw new Error("Unable to load korapay collection modal");
   }, [error]);
 
   /**
    *
-   * @param object - {onSuccess, onClose, onFailed, onTokenized}
+   * @param object - { onSuccess, onClose, onFailed, onTokenized }
    */
   function handleKorapayPayment({
     onSuccess,
@@ -36,8 +34,8 @@ export default function useKorapay(korapayConfig: KorapayConfig) {
         key: korapayConfig.public_key,
         amount: korapayConfig.amount ?? 0,
         currency: korapayConfig.currency ?? "NGN",
-        onSuccess: onSuccess ? onSuccess : (): any => null,
-        onClose: onClose ? onClose : (): any => null
+        onClose: onClose ? onClose : (): null => null,
+        onSuccess: onSuccess ? onSuccess : (): null => null
       };
 
       // @ts-ignore
@@ -47,9 +45,10 @@ export default function useKorapay(korapayConfig: KorapayConfig) {
       if (onTokenized) korapayArgs.onTokenized = onTokenized;
 
       // @ts-ignore
+      // eslint-disable-next-line no-undef
       return window.Korapay && window.Korapay.initialize(korapayArgs);
     }
   }
 
-  return [handleKorapayPayment] as const;
+  return handleKorapayPayment;
 }

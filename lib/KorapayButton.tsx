@@ -4,23 +4,23 @@ import { KorapayConfig } from "./types";
 
 interface KorapayButtonProps extends KorapayConfig {
   text?: string;
-  className?: string;
-  children?: React.ReactNode;
-  onSuccess?: Function;
-  onClose?: Function;
   disabled?: boolean;
+  className?: string;
+  onClose?: Function;
+  onSuccess?: Function;
+  children?: React.ReactNode;
 }
 
-const KorapayButton = ({
+const KorapayButton: React.FC<KorapayButtonProps> = ({
   text,
-  className,
   children,
-  onSuccess = () => null,
-  onClose = () => null,
   disabled,
+  className,
+  onClose = () => null,
+  onSuccess = () => null,
   ...config
-}: KorapayButtonProps): JSX.Element => {
-  const [initializePayment] = useKorapay(config);
+}) => {
+  const initializePayment = useKorapay(config);
 
   return (
     <button
