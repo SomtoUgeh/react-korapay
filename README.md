@@ -7,9 +7,9 @@
 ## Installation
 
 ```bash
-$ npm install @somtougeh/react-korapay@1.0.0
+npm install react-korapay
 # or
-$ yarn add @somtougeh/react-korapay@1.0.0
+yarn add react-korapay
 ```
 
 ## Examples
