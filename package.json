@@ -1,6 +1,6 @@
 {
   "name": "react-korapay",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "This is a react package for implementing korapay collection gateway",
   "repository": {
     "url": "git://github.com/SomtoUgeh/react-korapay.git"
